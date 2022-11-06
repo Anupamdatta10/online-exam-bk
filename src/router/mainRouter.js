@@ -4,7 +4,8 @@ const publicRouter = express.Router();
 const authRouter = express.Router();
 
 
-const userRouter = require('./users/userRouter')
+//const userRouter = require('./users/userRouter')
+const subjectRouter= require('./subject/subjectRouter')
 
 publicRouter.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -22,6 +23,7 @@ authRouter.use((req, res, next) => {
     next();
 });
 
-publicRouter.use('/users', userRouter);
-
+//publicRouter.use('/users', userRouter);
+//publicRouter.use('/questions', questionRouter);
+publicRouter.use('/subject', subjectRouter);
 module.exports = { authRouter, publicRouter };
