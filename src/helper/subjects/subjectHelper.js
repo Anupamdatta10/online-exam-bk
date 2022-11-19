@@ -37,3 +37,26 @@ exports.validCreateData=async (req)=>{
 exports.formatsubjectCreate=(params)=>{
     return {success:true,data:params}
 }
+
+exports.validDataSubjectUpdate=async (req)=>{
+    return new Promise((resolve,reject)=>{
+        let data=req.body
+        let result={}
+        if(Object.keys(data).length<=0){
+            result.success=false
+            result.message="body is missing"
+        }
+        else{
+            result.success=true
+            result.message=""
+            result.data=req
+        }
+        resolve(result)
+    })
+   
+}
+
+
+exports.formatsubjectUpdate=(params)=>{
+    return {success:true,data:params}
+}
