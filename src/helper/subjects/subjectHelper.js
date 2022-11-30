@@ -39,8 +39,10 @@ exports.formatsubjectCreate=(params)=>{
 }
 
 exports.validDataSubjectUpdate=async (req)=>{
+    
     return new Promise((resolve,reject)=>{
         let data=req.body
+        console.log("----",data)
         let result={}
         if(Object.keys(data).length<=0){
             result.success=false
@@ -50,7 +52,9 @@ exports.validDataSubjectUpdate=async (req)=>{
             result.success=true
             result.message=""
             result.data=req
+            console.log("----",req)
         }
+        console.log("----",result)
         resolve(result)
     })
    
@@ -60,3 +64,20 @@ exports.validDataSubjectUpdate=async (req)=>{
 exports.formatsubjectUpdate=(params)=>{
     return {success:true,data:params}
 }
+
+exports.validDataSubjectDelete=async (req)=>{
+    
+    let validData = {}
+    
+    validData.success = true
+    validData.message = "success"
+    validData.data=req
+    return validData;
+   
+}
+
+
+exports.formatsubjectDelete=(params)=>{
+    return {success:true,data:params}
+}
+
