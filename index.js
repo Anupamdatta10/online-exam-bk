@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/v1',mainRouter.publicRouter)
 
 
-app.get('/api/v1',)
+//app.get('/api/v1',)
 app.listen(PORT, () => {
 	console.log("Server up and running on port: %d", PORT);
 });
